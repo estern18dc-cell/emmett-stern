@@ -60,11 +60,25 @@ a:hover { text-decoration: underline; }
 .nav nav a { color: var(--muted); font-size: 15px; margin-left: 22px; }
 .nav nav a:hover { color: var(--text); text-decoration: none; }
 
-/* hero */
-.hero { padding: 96px 24px 72px; }
+/* hero: Lapland sunset photo */
+.hero {
+  position: relative;
+  min-height: 86vh; min-height: 86svh;
+  display: flex; align-items: flex-start;
+  background:
+    linear-gradient(to bottom, rgba(12, 22, 44, .55) 0%, rgba(12, 22, 44, .3) 45%, rgba(12, 22, 44, .05) 75%, rgba(12, 22, 44, 0) 90%, var(--bg) 100%),
+    url("img/lapland.jpg") center 55% / cover no-repeat;
+  color: #fff;
+}
+.hero-inner { width: 100%; padding-top: 96px; padding-bottom: 72px; }
+.hero h1, .hero .lede { text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
+.hero .lede { color: rgba(255, 255, 255, .9); }
+.hero .btn { background: #fff; color: #1c1f23; }
+.hero .btn.ghost { background: rgba(12, 22, 44, .25); color: #fff; border-color: rgba(255, 255, 255, .5); }
+.photo-credit { position: absolute; right: 16px; bottom: 10px; margin: 0; font-size: 12px; color: var(--muted); }
 .eyebrow {
   text-transform: uppercase; letter-spacing: .12em;
-  font-size: 13px; font-weight: 600; color: var(--accent); margin: 0 0 18px;
+  font-size: 13px; font-weight: 600; color: #cfe0f5; margin: 0 0 18px;
 }
 .hero h1 {
   font: 600 clamp(28px, 4.2vw, 42px)/1.22 var(--serif);
@@ -122,7 +136,14 @@ h3.sub { margin-top: 40px; font-size: 22px; }
 
 @media (max-width: 720px) {
   .wrap { padding: 0 16px; }
-  .hero { padding: 56px 16px 48px; }
+  .hero {
+    min-height: 78svh;
+    background:
+      linear-gradient(to bottom, rgba(12, 22, 44, .6) 0%, rgba(12, 22, 44, .5) 70%, rgba(12, 22, 44, .2) 90%, var(--bg) 100%),
+      url("img/lapland.jpg") 70% 50% / cover no-repeat;
+  }
+  .hero-inner { padding-top: 56px; padding-bottom: 48px; }
+  .hero .btn.ghost { background: rgba(12, 22, 44, .4); }
   .section { padding: 44px 16px; }
   .grid { grid-template-columns: 1fr; }
   .nav nav a { margin-left: 14px; font-size: 14px; }
@@ -145,7 +166,8 @@ h3.sub { margin-top: 40px; font-size: 22px; }
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero wrap">
+    <section class="hero">
+      <div class="wrap hero-inner">
       <p class="eyebrow">AI · Military power · Strategic stability</p>
       <h1>I study how artificial intelligence is changing military power, and what that means for deterrence between the United States and China.</h1>
       <p class="lede">Research Associate at Lawrence Livermore National Laboratory's Center for Global Security Research and SPAR research fellow. I combine defense analysis, Mandarin-language sources, and hands-on LLM evaluation.</p>
@@ -154,6 +176,8 @@ h3.sub { margin-top: 40px; font-size: 22px; }
         <a class="btn ghost" href="Emmett Stern Resume.pdf" data-file target="_blank">Résumé (PDF)</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/emmett-stern-0b47ba162/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
+      </div>
+      <p class="photo-credit">Lapland, Finland</p>
     </section>
 
     <!-- SELECTED WORK -->
